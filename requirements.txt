@@ -1,1 +1,5 @@
 git+https://github.com/facebookresearch/detectron2@main#subdirectory=projects/DensePose
+moviepy
+controlnet_aux
+mediapipe
+openmim
