@@ -15,7 +15,13 @@ def main(
     output_path="./outputs/",
     pose_model="dwpose",
 ):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if torch.backends.mps.is_available():
+      device = "mps"
+    elif torch.cuda.is_available():
+      device = "cuda"
+    else:
+      device = "cpu"
+    #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if pose_model.__contains__("openpose"):
         openpose = OpenposeDetector.from_pretrained("lllyasviel/ControlNet")
     else:
