@@ -11,7 +11,8 @@ import re
 
 
 def main(
-    input_path="sample_videos/input_video.mp4",
+    #input_path="sample_videos/input_video.mp4",
+    input_path,
     output_path="./outputs/",
     pose_model="dwpose",
 ):
@@ -183,7 +184,8 @@ def main(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-i", "--input_path", type=str, default="sample_videos/input_video.mp4"
+        #"-i", "--input_path", type=str, default="sample_videos/input_video.mp4"
+        "-i", "--input_path", type=str
     )
     parser.add_argument("-o", "--output_path", type=str, default="./outputs/")
     parser.add_argument("--pose_model", type=str, default="dwpose")
