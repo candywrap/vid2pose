@@ -11,7 +11,7 @@ import re
 
 
 def main(
-    input_path="vid2pose/sample_videos/input_video.mp4",
+    input_path="sample_videos/input_video.mp4",
     output_path="./outputs/",
     pose_model="dwpose",
 ):
@@ -73,7 +73,7 @@ def main(
         image = Image.open(i)
 
         # image = np.array(image)
-        openpose.to(device)
+        # openpose.to(device)
         
         if pose_model.__contains__("full"):
             image = openpose(image, include_hand=True, include_face=True)
@@ -183,7 +183,7 @@ def main(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-i", "--input_path", type=str, default="vid2pose/sample_videos/input_video.mp4"
+        "-i", "--input_path", type=str, default="sample_videos/input_video.mp4"
     )
     parser.add_argument("-o", "--output_path", type=str, default="./outputs/")
     parser.add_argument("--pose_model", type=str, default="dwpose")
