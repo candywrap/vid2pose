@@ -158,12 +158,12 @@ def main(
                     video_input = gr.Video(
                         source="upload",
                         type="filepath",
-                        value=input_path if not input_path.endswith(".gif") else None,
+#                        value=input_path if not input_path.endswith(".gif") else None,
                     )
                     gif_input = gr.File(
                         label="import a GIF instead",
                         file_types=[".gif"],
-                        value=input_path if input_path.endswith(".gif") else None,
+#                        value=input_path if input_path.endswith(".gif") else None,
                     )
                     gif_input.change(
                         fn=convertG2V, inputs=gif_input, outputs=video_input
